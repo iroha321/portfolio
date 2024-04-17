@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="アイス">
+<meta name="description" content="オーストラリア">
+<title>Full of Icecream Bico</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/style3.css" rel="stylesheet">
+<link href="slide/jquery.bxslider.css" rel="stylesheet" />
+<div id="page_top"><a href="#"></a></div>
+</head>
+<body>
+    
+<div id="container"><!---containerここから---->
+<div id="wrapper">
+<header>
+<h2><img src="images/rogoicepink.png" alt="rogo画像"width="130px"height="130px"class="magnify">
+</h2>
+<h1>SHOP INFORMATION</h1>
+</header><!---headerここまで---->
+    
+<div class="navigation">
+<div id="navToggle">
+  <div>
+   <span></span> <span></span> <span></span>
+  </div>
+</div><!--#navToggle END-->
+
+<nav>
+<ul>
+<li><a href="index.html"target="_blank">TOP</a></li>
+<li><a href="index3.html"target="_blank">AUSTRALIA</a></li>
+<li><a href="index6.html"target="_blank">FRAVER</a></li>
+<li><a href="index33.html"target="_blank">COMPANY</a></li>
+<li><a href="index2.html"target="_blank">SHOP</a></li>
+<li><a href="#"target="_blank">CONTACT</a></li>
+</ul>
+</nav>
+</div>
+
+<div id="content"><!---content--->
+<main>
+<h1>AUSTRALIA</h1>
+<div id="ex">
+<li><a href=""><img src="images/australia.png" alt="AUSTRALIA"height="850px" width="450px"></a></li>
+ </div>
+</main>
+ </div>
+    
+<aside>
+    <h1><p>MAP AUSTRALIA</p></h1>
+<h2><p>オーストラリアのタスマニア島は豊かな自然と<br>
+    動植物が生息する自然あふれる島です。そして<br>
+    このタスマニアで収穫されるカカオの実とコーヒー<br>
+    とミルクが産地の特産となっております。豊かな<br>
+    手つかずの自然が多く残されていることから、<br>
+    水が浄化され綺麗であることから食べ物もおいしく<br>
+    育つといわれており、中でもミルクやチーズ、<br>
+    ワイン、コーヒー、ココアは世界からも根強い<br>
+    人気があり、カフェではそんなオーガニックで<br>
+    安全な材料にこだわりをもっています。</p></h2>
+
+<br>   
+
+<h1><p>ACO(Australian Certified Organic)</p></h1>
+
+<h2><p>オーガニック認証を取得しより安全性を評価できる
+基準を追加しました。オーストラリアオーガニック認証にも
+登録され安心して健康を守りながら環境を守ることを
+企業理念に掲げております。
+    <h1><p>ＦＡＲＥＴＲＡＤＥ＆ＯＲＧＳＮＩＣ</p></h1>
+<h2><p>米国農務省（Ｕｎｉｔｅｄ　Ｓｔａｔｅｓ<br>
+Ｄepartment of Agriculuture)オーガニック認証マーク。<br>
+世界で使用されるオーガニック認証マーク。<br>
+95％以上の有機原料を使用しているものにのみ認証が与えられる。<br></p></h2>
+</aside>  
+<footer>
+<p>Full of Icecream Bico<br>
+Adress Tokyo NAKANEGURO 00-000  </p>
+<h3>&phone; 032-111-222<br>(Mon-Sun)10:00～18:00 </h3>
+<p>&copy; IcecreamFulloflife. All Rights Reserved.</p>
+<ul>
+<li><a href="#">PPRIVACY</a></li>
+<li><a href="#">HOME</a></li>
+<li><a href="#">CONTACT</a></li>
+<li><a href="#">SHOP</a></li>
+<li><a href="#">TEAM</a></li>
+</footer>
+  
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="slide/jquery.bxslider.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.bxslider').bxSlider({
+			auto:true,
+			mode: 'horizontal',
+		//	moveSlides: 1,
+		//	slideMargin: 40,
+			infiniteLoop: true,
+		//	slideWidth: 660,
+		//	minSlides: 3,
+		//	maxSlides: 3,
+			controls: false,
+			speed: 800,
+		});
+	});
+</script>
+ <script type="text/javascript" src="./js/jquery.mousewheel.pack.js?v=3.1.3"></script>
+
+<script>
+$(function() {
+	$('#navToggle').click(function(){
+		$('.navigation').toggleClass('openNav');
+	});
+});
+</script>
+</body>
+</html>

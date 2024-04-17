@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js demo-5">
+	<head>
+		<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Full of Icecream Bico</title>
+<meta name="description" content="Bookblock: A Content Flip Plugin - Demo 1" />
+<meta name="keywords" content="javascript, jquery, plugin, css3, flip, page, 3d, booklet, book, perspective">
+	<link rel="stylesheet" type="text/css" href="book/css/default.css" />
+	<link rel="stylesheet" type="text/css" href="book/css/bookblock.css" />
+	<!-- custom demo style -->
+	<link rel="stylesheet" type="text/css" href="book/css/demo1.css" />
+	<script src="book/js/modernizr.custom.js"></script>
+    <link rel="icon"  href="book/imegess/icon.png">
+    <link href="book/reset.css" rel="stylesheet">
+    <link href="book/style6.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+
+<div id="page_top"><a href="#"></a></div>
+    
+
+</head>
+    
+<body>
+		<div class="container">
+<header>
+<h2><img src="images/rogoicepink.png" alt="rogo画像"width="130px"height="130px">
+</h2>
+<h1>COFFEE & ICECREAM </h1>
+</header><!---headerここまで---->
+
+<nav>
+<ul>
+<li><a href="index.html"target="_blank">TOP</a></li>
+<li><a href="index3.html"target="_blank">AUSTRALIA</a></li>
+<li><a href="index6.html"target="_blank">FRAVER</a></li>
+<li><a href="index33.html"target="_blank">COMPANY</a></li>
+<li><a href="index2.html"target="_blank">SHOP</a></li>
+<li><a href="#"target="_blank">CONTACT</a></li>
+</ul>
+</nav>
+    
+<div id="container"><!---containerここから---->
+    
+<!---div class="main clearfix"--->
+	<div id="bb-bookblock" class="bb-bookblock">
+		<div class="bb-item">
+			<img src="book/images/demo1/ice3.JPG" alt="image01"/>
+		</div>
+		<div class="bb-item">
+			<a href="http://drbl.in/ciTX"><img src="book/images/demo1/ice2.JPG" alt="image02"/></a>
+		</div>
+		<div class="bb-item">
+			<a href="http://drbl.in/cLHx"><img src="book/images/demo1/ice1.JPG" alt="image03"/></a>
+		</div>
+		<div class="bb-item">
+			<a href="http://drbl.in/bAfn"><img src="book/images/demo1/ice5.JPG" alt="image04"/></a>
+		</div>
+		<div class="bb-item">
+		<a href="http://drbl.in/dcbE"><img src="book/images/demo1/ice4.JPG"s alt="image05"/></a>
+		</div>
+        <div class="bb-item">
+		<a href="http://drbl.in/dcbE"><img src="book/images/demo1/ice8.jpg"s alt="image05"/></a>
+		</div>
+	</div><!--bb-bookblock-->
+	<nav>
+		<a id="bb-nav-first" href="#" class="bb-icon bb-icon-first">First page</a>
+		<a id="bb-nav-prev" href="#" class="bb-icon bb-icon-arrow-left">Previous</a>
+		<a id="bb-nav-next" href="#" class="bb-icon bb-icon-arrow-right">Next</a>
+		<a id="bb-nav-last" href="#" class="bb-icon bb-icon-last">Last page</a>
+	</nav>
+	</div><!--bb-custom-wrapper-->
+	<!--/div-->
+<footer>
+<p>Full of Icecream Bico<br>
+<br>Adress Tkyo NAKANEGURO 00-000  </p>
+<h3>&phone; 032-111-222<br>(Mon-Sun)10:00～18:00 </h3>
+<p>&copy; IcecreamFulloflife. All Rights Reserved.</p>
+<ul>
+<li><a href="#">PPRIVACY</a></li>
+<li><a href="#">HOME</a></li>
+<li><a href="#">CONTACT</a></li>
+<li><a href="#">SHOP</a></li>
+<li><a href="#">TEAM</a></li>
+</ul>
+</footer>
+</div><!-- /container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="book/js/jquerypp.custom.js"></script>
+<script src="book/js/jquery.bookblock.js"></script>
+		<script>
+			var Page = (function() {
+				
+				var config = {
+						$bookBlock : $( '#bb-bookblock' ),
+						$navNext : $( '#bb-nav-next' ),
+						$navPrev : $( '#bb-nav-prev' ),
+						$navFirst : $( '#bb-nav-first' ),
+						$navLast : $( '#bb-nav-last' )
+					},
+					init = function() {
+						config.$bookBlock.bookblock( {
+							speed : 800,
+							shadowSides : 0.8,
+							shadowFlip : 0.7
+						} );
+						initEvents();
+					},
+					initEvents = function() {
+						
+						var $slides = config.$bookBlock.children();
+
+						// add navigation events
+						config.$navNext.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'next' );
+							return false;
+						} );
+
+						config.$navPrev.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'prev' );
+							return false;
+						} );
+
+						config.$navFirst.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'first' );
+							return false;
+						} );
+
+						config.$navLast.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'last' );
+							return false;
+						} );
+						
+						// add swipe events
+						$slides.on( {
+							'swipeleft' : function( event ) {
+								config.$bookBlock.bookblock( 'next' );
+								return false;
+							},
+							'swiperight' : function( event ) {
+								config.$bookBlock.bookblock( 'prev' );
+								return false;
+							}
+						} );
+
+						// add keyboard events
+						$( document ).keydown( function(e) {
+							var keyCode = e.keyCode || e.which,
+								arrow = {
+									left : 37,
+									up : 38,
+									right : 39,
+									down : 40
+								};
+
+							switch (keyCode) {
+								case arrow.left:
+									config.$bookBlock.bookblock( 'prev' );
+									break;
+								case arrow.right:
+									config.$bookBlock.bookblock( 'next' );
+									break;
+							}
+						} );
+					};
+
+					return { init : init };
+
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
+<script type="text/javascript" src="snow/js/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="snow/js/snowfall.jquery_tw.custom_randimg.js"></script>
+<script type="text/javascript">
+$(document).snowfall({
+   flakeCount :40,			// 数
+   flakeIndex : 99999, 		// スタイルシートのz-indexの値
+   maxSpeed : 3, 			// 最大速度
+   minSpeed : 1, 			// 最小速度
+   maxSize  : 50, 			// 最大サイズ
+   minSize  : 20, 			// 最小サイズ
+   image : [
+      './images/ico1.png',
+      './images/ico2.png',
+      './images/ico3.png',
+      './images/ico4.png',
+      './images/ico5.png',
+      './images/rogoicepink.png'
+   ]
+});
+</script>        
+</body>
+</html>

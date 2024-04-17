@@ -1,0 +1,614 @@
+﻿@charset "utf-8";
+@import "compass/css3";
+<!---eventここ---->
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+
+}
+body {
+  background:
+    linear-gradient(45deg, hsla(352, 96%, 45%, 1) 0%, hsla(352, 96%, 45%, 0) 70%),
+    linear-gradient(135deg, hsla(253, 95%, 42%, 1) 10%, hsla(253, 95%, 42%, 0) 80%),
+    linear-gradient(225deg, hsla(179, 91%, 45%, 1) 10%, hsla(179, 91%, 45%, 0) 80%),
+    linear-gradient(315deg, hsla(119, 96%, 49%, 1) 100%, hsla(119, 96%, 49%, 0) 70%);
+}
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.menu {
+  @extend .absolute-center;
+  width: 5em;
+  height: 5em;
+
+  .btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255,255,255, 0.15);
+    opacity: 0;
+    z-index: -10;
+    cursor: pointer;
+    transition: opacity 1s, z-index 0.3s, transform 1s;
+    transform: translateX(0);
+
+    .fa {
+      @extend .absolute-center;
+      font-size: 3em;
+      transition: color 0.3s;
+    }
+    
+    &:hover .fa {
+      color: rgba(255,255,255, 0.7);
+    }
+
+    &.trigger {
+      opacity: 1;
+      z-index: 100;
+      cursor: pointer;
+      transition: transform 0.3s;
+      
+      &:hover {
+        transform: scale(1.2);
+        
+        .line {
+          background-color: rgba(255,255,255, 0.7);
+          
+          &:before, &:after {
+            background-color: rgba(255,255,255, 0.7);
+          }
+        }
+      }
+
+      .line {
+        @extend .absolute-center;
+        width: 60%;
+        height: 6px;
+        background: #000;
+        border-radius: 6px;
+        transition: background-color 0.3s, height 0.3s, top 0.3s;
+
+        &:before, &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background: #000;
+          border-radius: 6px;
+          transition: background-color 0.3s, transform 0.3s;
+        }
+        &:before {
+          top: -12px;
+          transform-origin: 15% 100%;
+        }
+        &:after {
+          top: 12px;
+          transform-origin: 25% 30%;
+        }
+      }
+    }
+  }
+
+  .rotater {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 50%;
+  }
+
+  &.active {
+    
+    .btn-icon {
+      opacity: 1;
+      z-index: 50;
+    }
+    
+    .trigger {
+      
+      .line {
+        height: 0px;
+        top: 45%;
+        
+        &:before {
+          transform: rotate(45deg);
+          width: 110%;
+        }
+        &:after {
+          transform: rotate(-45deg);
+          width: 110%; 
+        }
+      }
+    }
+  }
+}
+
+$numOfElems: 8;
+
+@for $i from 1 through $numOfElems {
+  $deg: 360deg / $numOfElems;
+  .rotater:nth-child(#{$i}) {
+    transform: rotate($deg/-2 + $deg * ($i - 1));
+  }
+
+  .menu.active {
+    .rotater:nth-child(#{$i}) .btn-icon {
+      transform: translateY(-10em) rotate($deg/2 - $deg * ($i - 1)); 
+    }
+  }
+}
+<!-----eventここまで------>
+body { 
+	font-family: "ヒラギノ角ゴ　Pro W3",Hiragino Kaku Gothic, "メイリオ", Meiriyo, Osaka,"
+"游ゴシック", Yu Gothic, sans-serif;
+	background: #69FFD8 ;
+	background: #222B07 ;
+	width: 100%;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+#container {
+	margin: 0 auto;
+	width: 92%;
+	background: #FFF;
+    padding-bottom: 80px;
+}
+header {
+    position: fixed;
+	display: flow-loot;
+	font-family: Century Schoolbook;
+    color: #FFF;
+	padding-top: 80px;
+}
+header h1 {
+	float: right;
+	width: 70%;
+	padding-bottom: 10px;
+	letter-spacing: 2px;
+	font-size: 2rem;
+	color: #174360;
+}
+header h2 {
+	float: left;
+    margin-left: 40px;
+	font-size: 3rem;
+	width: 20%;
+	display: block;
+}
+.drawerBt {
+	display:none;
+}
+
+.dNavWrapper {
+	margin:10px auto;
+	width: 100%;
+    opacity: 0.6;
+	background: blue;
+}
+<!---topもどる---->
+#page_top{
+  width: 100px;
+  height: 60px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #ef3f98;
+  opacity: 0.6;
+}
+#page_top h1 {
+    font-family: Century Schoolbook;
+	font-size: 3rem;
+	color: #FFF;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 60px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -25px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+<!---topもどるここまで---->
+
+nav {
+position: absolute;
+　top: 0;
+　/*ナビメニューを左に隠した状態になる*/
+  left: -40%;
+  width: 40%;
+  height: 100vh;
+  background: #ffffff;
+　/*０.7秒かけてナビメニューがスライドする*/
+  transition: .7s;
+	color: #000;
+	font-family: Century Schoolbook;	
+	letter-spacing: 2px;
+}
+nav ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+nav li {
+    list-style-type: none;
+	margin: 0 auto;
+	width: calc(100%/7);
+	border-right:1px solid #000;
+	font-size: 1rem;
+	line-height: 2.5rem;
+	text-align: center;
+	color: #000;
+}
+
+nav li a {
+	display: block;
+	color: #000;
+   transition: .5s;
+}
+nav li a:hover {
+	background: pin;
+	width: 100%;
+    border-bottom: none;
+}
+#hambuger {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 50px;
+  height: 44px;
+  cursor: pointer;
+  transition: 1s;
+}
+p {
+	font-family: Century Schoolbook;
+	font-size: 1.5rem;
+	color: #FFF;
+	font-style: italic;
+}
+h2 {
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    color: #FFF;
+    line-height: 1.7rem;
+}
+#content {
+	display: flex;
+	padding-top: 60px;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+	
+}
+main {
+	margin: 0 auto;
+	background: #BEC2D9;
+	width: 30%;
+	list-style: none;
+}
+main h2 {
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    color: #FFF;
+    line-height: 1.7rem;
+}
+main img {
+	padding: 30px 10px;
+}
+
+#event {
+	margin: 0 auto;
+	background: #BEC2D9;
+	width: 30%;
+	list-style: none;
+	height: 450px;
+}
+#event img {
+	padding: 30px 10px;
+}
+aside {
+	margin: 0 auto;
+	background: #BEC2D9;
+	list-style: none;
+	width: 30%;
+}
+aside img {
+	padding: 30px 10px;
+}
+aside h2 p {
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    line-height: 1.7rem;
+}
+
+footer{
+	display: flow-root;
+	color: #005F4D;
+	font-family: Century Schoolbook;
+    padding-top:30px;
+	padding-left: 20px;
+	width: 100%;
+}
+
+footer h2 {
+	padding-left: 30px;
+	font-size: 1rem;
+	width: 3%;
+}
+footer h3 {
+	padding-left: 30px;
+    color: #005F4D;
+	font-size: 0.8rem;
+	width: 30%;
+}
+footer p {
+    color: #005F4D;
+	width: 30%;
+	padding-left: 20px;
+	font-size: 0.9rem;
+}
+footer ul {
+    padding-top: 10px;
+    height: 100px;
+	padding-left: 30px;
+	color: #174360;
+	width: 30%;
+}
+footer li {
+	color: #005F4D;
+	width: 50%;
+	font-size: 0.9rem
+}
+footer li a {
+	color: #005F4D;
+}
+
+footer li a:hover {
+	color: orange;
+}
+
+input[type="text"],
+input[type="email"] {
+	width: 60%;
+	height: 1.2rem;
+}
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 5px;
+}
+input[type="submit"] {
+	width: 25%;
+	font-size:1rem;
+	cursor: pointer;
+}
+label {
+	padding-right: 10px;
+}
+textarea {
+	width: 80%;
+	height: 100px;
+}
+<!---レスポンシブル>
+@media screen and (max-width:1030px){
+#container {
+	width: 80%;
+}
+}
+
+@media screen and (max-width:780px){
+#container {
+	width: 90%;
+}
+
+input[type="text"],
+input[type="email"] {
+	width: 98%;
+}
+textarea {
+	width: 98%;
+	height: 100px;
+}
+
+}
+
+@media screen and (max-width:650px){
+#container {
+	padding-top: 24px;
+	width: 96%;
+}
+.drawerBg {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 999;
+	background-color: rgba(120, 120, 120, 0.4);
+	display: none;
+	top: 0;
+	left: 0;
+	}
+	.drawerBt {
+	display: block;
+	background: none;
+	border: none;
+	padding: 0;
+	width: 42px;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	position: fixed;
+	top: 3px;
+	right: 32px;
+	z-index: 1001;
+	text-align: center;
+	outline: none;
+}
+
+.drawerBt.active .drawerBar {
+	width: 49px;
+}
+
+.drawerBt.active .drawerBar1 {
+	transform: rotate(30deg);
+}
+
+.drawerBt.active .drawerBar2 {
+	opacity: 0;
+}
+
+.drawerBt.active .drawerBar3 {
+	transform: rotate(-30deg);
+}
+
+.drawerBt.active .drawerMenuText {
+	display: none;
+}
+
+.drawerBt.active .drawerClose {
+	display: block;
+}
+
+.drawerBar {
+	display: block;
+	height: 2px;
+	margin: 10px 0;
+	transition: all 0.2s;
+	transform-origin: 0 0;
+}
+
+.drawerText {
+	text-align: center;
+	font-size: 10px;
+}
+
+.drawerClose {
+	letter-spacing: 0.08em;
+	display: none;
+}
+
+.drawerMenuText {
+	display: block;
+}
+
+.dNavWrapper {
+	width: 200px;
+	height: 100%;
+	transition: all 0.2s;
+	transform: translate(312px);
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: #FFF;
+}
+
+.dNavWrapper.open {
+	transform: translate(0);
+}
+
+
+.left .drawerBt {
+	right: auto;
+	left: 32px;
+}
+
+.left .dNavWrapper {
+	transform: translate(-312px);
+	right: auto;
+	left: 0;
+}
+
+.left .dNavWrapper.open {
+	transform: translate(0);
+}
+
+/*+++ Default Navigation CSS +++*/
+
+.dNav {
+	padding: 100px 0 50px;
+	flex-direction:column;
+}
+
+.dNav li {
+	flex-direction: column;
+	width: 100%;
+	font-size: 1em;
+	margin-bottom: 0;
+	border-bottom: 1px solid #CCC;
+	border-left: none;
+}
+
+/*+++ Default Button Color +++*/
+.drawerBt {
+	color: tomato;
+}
+
+.drawerBt .drawerBar {
+	background-color: tomato;
+}
+article #m_box {
+	flex-direction: column;
+	margin: 0 auto;
+	width: 90%;
+}
+article section {
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+input[type="text"],
+input[type="email"] {
+	width: 98%;
+}
+textarea {
+	width: 98%;
+	height: 100px;
+}
+
+}
+
+@media screen and (max-width:400px){
+.drawerBt {
+	top: 3px;
+	right: 10px;
+}
+}

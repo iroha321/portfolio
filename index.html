@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="アイス">
+<meta name="description" content="オーストラリア">
+<title>FULL OF ICE CREAM</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="slide/jquery.bxslider.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./fc_box/jquery.fancybox.css?v=2.1.5">
+<link rel="stylesheet" type="text/css" href="./fc_box/fancybox_style.css">
+<link rel="icon"  href="images/icon.png">
+<link rel="stylesheet" href="slid/style.css" media="screen, projection, print">
+</head>
+<body>
+<div id="container"><!---containerここから---->
+
+<header>
+<h2><img src="images/rogoicepink.png" alt="rogo画像"width="135px"height="135px">
+</h2>
+
+<h1>FULL of ICECREAM BICO</h1>
+<div class="bx-wrapper">
+<ul class="bxslider">
+  <li><img src="images/top.jpg"  /></li>
+  <li><img src="images/top2.jpg"  /></li>
+  <li><img src="images/top5.jpg"  /></li>
+  <li><img src="images/top9.jpg" /></li>
+  <li><img src="images/top2.jpg"  /></li>
+  <li><img src="images/top8.jpg"  /></li>
+  </ul>
+</div><!---sliderここまで---->
+
+</header><!---headerここまで---->
+
+   <!-- スライドメニュー部分-->
+<nav id="slide_menu">
+<ul>
+<li><a href="index.html"target="_blank">TOP</a></li>
+<li><a href="index3.html"target="_blank">AUSTRALIA</a></li>
+<li><a href="index5.html"target="_blank">FRAVER</a></li>
+<li><a href="index33.html"target="_blank">COMPANY</a></li>
+<li><a href="index2.html"target="_blank">SHOP</a></li>
+<li><a href="https://www.broadsheet.com.au/melbourne/food-and-drink/article/vegan-friendly-ice-cream-and-gelato-crawl-melbourne"target="_blank">CONTACT</a></li>
+</ul>
+</nav>
+ <!--メニューを出すボタン-->
+    <button id="button"><i class="fa fa-bars"><img src="images/book.png"></i></button>
+
+    <div class="content">
+    </div><!-- /.content -->
+    
+    
+<div id="content"><!---contentここ--->
+<main><!---mainここ---->
+<section>
+<h2>ORIGINAL GOOD”S</h2>
+
+<div class="inb">
+<li><a href=""><img src="images/ices.jpg" alt="アイス" width="199px""height="325px"></a></li>
+</div>
+    
+<div class="inc">
+<li><a href="#"><img src="images/coffee.jpg" alt="コーヒー"width="240px"height="350px"></a></li>
+</div>
+</section>
+
+
+<div class="ine">
+<section>
+<h3>
+<p>オーストラリアで人気の<br>
+カフェ＆アイススタンドがついに<br>
+日本に上陸！コーヒーとアイス<br>
+はオーストラリアタスマニア島の<br>
+豊かな土地で収穫された有機フルーツ<br>
+と特産品のミルクとチョコを使用！<br>
+環境にも体にも優しく現地では、<br>
+大人から子供までに愛される<br>
+カフェ＆アイススタンドが東京<br>
+にオープンしました！オリジナル<br>
+グッズやテイクアウトメニュー<br>
+のアイスも発売開始！<br></p></h3>
+</section>
+</div>
+<div id="big-box
+<div class="ind">
+<li><a href="#"><img src="images/Barchoco1.png" alt="choco"width="210px"height="300px"></a></li>
+</div><div class="ina">
+<li><a href="#"><img src="images/coffeeice.jpg" alt="アフォガド"width="260px"></a></li>
+</div>
+</div>
+
+</main>
+</div><!---contentここまで---->
+
+<footer>
+<div class ="ing">
+<h2>Full of Icecream Bico</h2>
+<p>Adress Tkyo NAKANEGURO 00-000 </p>
+<h3>&phone; 032-111-222<br>(Mon-Sun)10:00～18:00 
+&copy; IcecreamFulloflife. All Rights Reserved.</h3>
+<br>
+
+<!---MAP---->
+<div class="gMap">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8973482533274!2d144.95854351531736!3d-37.769005079760426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65cb34e631327%3A0x7bf8dbccebaeeef2!2zMjg4IEFsYmVydCBTdCwgQnJ1bnN3aWNrIFZJQyAzMDU2IOOCquODvOOCueODiOODqeODquOCog!5e0!3m2!1sja!2sjp!4v1629358838255!5m2!1sja!2sjp" width="350px"height="350px" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe></div>
+<!---MAPここまで---->
+</footer>
+</div><!---containerここまで---->
+
+<!---script ---->
+<script src="hnb/js/jquery-1.11.1.min.js"></script>
+<script src="slide/jquery.bxslider.min.js"></script>
+    
+<script>
+	$(document).ready(function(){
+		$('.bxslider').bxSlider({
+			auto:true,
+			mode: 'horizontal',
+		//	moveSlides: 1,
+		//	slideMargin: 40,
+			infiniteLoop: true,
+		//	slideWidth: 660,
+		//	minSlides: 3,
+		//	maxSlides: 3,
+			speed: 800,
+			pager: false,
+			controls: 1,
+		});
+	});
+</script>
+
+<script>
+$(function(){
+var menu = $('#slide_menu'), // スライドインするメニューを指定
+	menuBtn = $('#button'), // トリガーとなるボタンを指定
+	body = $(document.body), 	
+    menuWidth = menu.outerWidth();	            
+
+    menuBtn.on('click', function(){
+	body.toggleClass('open');
+        if(body.hasClass('open')){
+//			body.animate({'left' : menuWidth }, 300);			
+			menu.animate({'left' : 0 }, 300);					
+		} else {
+			menu.animate({'left' : -menuWidth }, 300);
+//			body.animate({'left' : 0 }, 300);			
+		}		     
+    });
+});    
+</script>
+    
+    
+    
+<!---script ---->
+
+ <script type="text/javascript" src="./js/jquery.mousewheel.pack.js?v=3.1.3"></script>
+ <script type="text/javascript" src="./fc_box/jquery.fancybox.pack.js?v=2.1.5"></script>
+ <script type="text/javascript" src="./fc_box/fancybase.js"></script>
+
+</body><!---bodyここまで---->
+</html>

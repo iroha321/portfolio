@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="アイス">
+<meta name="description" content="オーストラリア">
+<title>Full of Icecream Bico</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/style33.css" rel="stylesheet">
+<link rel="icon"  href="images/icon.png">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="slid/style.css" media="screen, projection, print">
+    
+</head>
+
+<body>
+<div id="container"><!---containerここから---->
+
+<header>
+<h2><img src="images/rogoicepink.png" alt="rogo画像"width="130px"height="130px">
+</h2>
+<h1>FULL OF ICECREAM<br>OUR COMPANY</h1>
+<h1>&nbsp;</h1>
+</header>
+<!---headerここまで---->
+<div class="container">
+    <!-- スライドメニュー部分-->
+<nav id="slide_menu">
+<ul>
+<li><a href="index.html"target="_blank">TOP</a></li>
+<li><a href="index3.html"target="_blank">AUSTRALIA</a></li>
+<li><a href="index5.html"target="_blank">FRAVER</a></li>
+<li><a href="index33.html"target="_blank">COMPANY</a></li>
+<li><a href="index2.html"target="_blank">SHOP</a></li>
+<li><a href="https://www.broadsheet.com.au/melbourne/food-and-drink/article/vegan-friendly-ice-cream-and-gelato-crawl-melbourne"target="_blank">CONTACT</a></li>
+</ul>
+</nav>
+ <!--メニューを出すボタン-->
+    <button id="button"><i class="fa fa-bars"></i></button>
+
+    <div class="content">
+    </div><!-- /.content -->
+    
+<div id="content"><!---contentここ---->
+
+<!---<p>SHOP INFORMATION</p><br>--->
+
+<main>
+  <h1>FROM
+  AUSTRALIA</h1>
+<div id="ex">
+  <li><img src="images/door.jpg" alt="AUSTRALIA"></li>
+</div>
+</main>
+
+<aside>
+<div id="ina">
+    <h1><p>COMPAY</p></h1>
+<h2><p>オーストラリアの人気ジェラート＆アイス<br>
+	スタンドカフェの"BICO"が東京に出店。<br>
+    一号店は中目黒の川沿いのカフェが連なる街。<br>
+    多くのオーストラリアや海外からのカフェが<br>
+    多く日本人外国人問わず通いたくなるような<br>
+    アイスクリーム店を目指してついに上陸。<br>
+    多くの原材料は、タスマニア島からの原材料と<br>
+    日本独自に各地の特産や旬の素材を取りれた<br>
+    メニューを季節ごとに期間限定のフレーバーも<br>
+    登場します！サステイナブルな食材、製品に<br>
+    こだわり有機農家さんと独自のルートを作り<br>
+	良い食材を、生かしながら展開していく予定です。<br>
+	国内と現地の有機農家と共同で原材料にこだわること<br>
+	で環境と体にも良いまた地域活性化や今後の有機栽培業<br>
+	の発展にも貢献できるよう展開している会社です。<br>
+	また、グッズ販売ではタスマニア自然保護団体へ
+	一部売り上げを寄付しております。</p></h2>
+</div>
+<br>    
+<div id="inb">
+    <h1><p>Australian Certified Organic</p></h1>
+<h2><p>今までは	FDA認証のみでしたが新に開始された
+	オーガニック認証を取得しより安全性を評価できる
+	基準を追加しました。
+<br>
+	ACO(Australian Certified Organic)<br>
+	オーストラリアオーガニック認証にも登録され<br>
+	安心して健康を守りながら環境を守ることを<br>
+	企業理念に掲げております。
+	FDA（United　States Ｄepartment of Agriculuture)<br>
+	オーガニック認証マーク。<br>
+	95％以上の有機原料を使用している<br>
+	ものにのみ認証を取得した原材料を使用。<br></p></h2>
+</div> 
+</aside>
+
+</div><!---contentここまで---->
+
+<footer>
+<p>Full of Icecream Bico<br>
+Adress Tkyo NAKANEGURO 00-000  </p>
+<h3>&phone; 032-111-222<br>(Mon-Sun)10:00～18:00 </h3>
+<p>&copy; FullofIcecream Bico. All Rights Reserved.</p>
+<ul>
+<li><a href="#">PPRIVACY</a></li>
+<li><a href="index.html">HOME</a></li>
+<li><a href="#">CONTACT</a></li>
+<li><a href="#">SHOP</a></li>
+<li><a href="#">TEAM</a></li>
+
+</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(function(){
+var menu = $('#slide_menu'), // スライドインするメニューを指定
+	menuBtn = $('#button'), // トリガーとなるボタンを指定
+	body = $(document.body), 	
+    menuWidth = menu.outerWidth();	            
+
+    menuBtn.on('click', function(){
+	body.toggleClass('open');
+        if(body.hasClass('open')){
+//			body.animate({'left' : menuWidth }, 300);			
+			menu.animate({'left' : 0 }, 300);					
+		} else {
+			menu.animate({'left' : -menuWidth }, 300);
+//			body.animate({'left' : 0 }, 300);			
+		}		     
+    });
+});    
+</script>
+</div><!-- /.container -->
+</body><!---bodyここまで---->
+</html>
